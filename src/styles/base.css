@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #323E69;
+    --color-primary-500: #323E69;
+}
+
+* {
+    box-sizing: content-box;
+}
