@@ -1,5 +1,6 @@
 ---
 import Head from "../components/shared/BaseHead.astro";
+import Footer from "../components/shared/Footer.astro";
 ---
 
 <!doctype html>
@@ -7,7 +8,8 @@ import Head from "../components/shared/BaseHead.astro";
   <head>
     <Head title="Work Today App" description="Work Today App" />
   </head>
-  <body>
+  <body class="bg-primary dark:bg-primary-700">
     <slot />
+    <Footer />
   </body>
 </html>

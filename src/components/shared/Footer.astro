@@ -1,0 +1,35 @@
+---
+import Container from "../utils/Container.astro";
+import Social from "../utils/Social.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-10">
+  <Container
+    className="py-8 bg-primary-600 dark:bg-primary-800 rounded-lg flex flex-row shadow-xl"
+  >
+    <div class="flex-1">
+      <a href="/" class="mb-6 block">
+        <img src="logo.svg" alt="Work Today Logo" class="h-17" />
+      </a>
+      <div class="text-sm text-primary-100">
+        <a
+          href="https://www.worktoday.com/privacy"
+          class="hover:underline block mb-3"
+          >Política de Privacidad y Términos de Servicio</a
+        >
+        <a href="/soporte" class="hover:underline block mb-3">Soporte</a>
+      </div>
+    </div>
+    <div class="flex-1 text-right text-primary-100 text-sm">
+      <p class="text-white mb-6">
+        worktoday @ {currentYear}
+      </p>
+      <a href="mailto:contacto@worktoday.io" class="hover:underline block mb-3"
+        >Contáctanos</a
+      >
+      <Social />
+    </div>
+  </Container>
+</footer>

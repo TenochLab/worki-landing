@@ -1,13 +1,17 @@
-<div class="hero w-full bg-primary">
-  <div class="max-w-[900px] py-10 lg:py-15 mx-auto px-10 lg:px-0">
+---
+import Container from "./utils/Container.astro";
+---
+
+<div class="hero w-full">
+  <Container className="py-10 lg:py-15 ">
     <img src="logo.svg" alt="Work Today Logo" class="h-15 lg:h-20" />
-  </div>
-  <div
-    class="flex flex-col-reverse lg:flex-row items-center justify-center h-full w-full mx-auto max-w-[900px] py-10 px-10 lg:px-0 text-center lg:text-left"
+  </Container>
+  <Container
+    className="flex flex-col-reverse lg:flex-row items-center justify-center h-full py-10  text-center lg:text-left"
   >
     <div class="flex-auto lg:flex-1 lg:mt-0 w-full">
       <div
-        class="p-3 lg:p-5 rounded-2xl bg-gray-200 inline-block shadow-xl w-25 lg:w-30"
+        class="p-3 lg:p-5 rounded-2xl bg-primary-50 dark:bg-primary-900 inline-block shadow-xl w-25 lg:w-30"
       >
         <img
           class="aspect-square"
@@ -15,11 +19,9 @@
           alt="Work Today App Logo"
         />
       </div>
-      <div class="flex flex-col mt-10">
-        <h1 class="text-white font-bold text-2xl lg:text-3xl mb-2">
-          Instala nuestra App
-        </h1>
-        <p class="text-white text-lg lg:text-xl">
+      <div class="flex flex-col mt-10 text-white dark:text-primary-200">
+        <h1 class="font-bold text-2xl lg:text-3xl mb-2">Instala nuestra App</h1>
+        <p class="text-lg lg:text-xl text-white">
           Encuentra y publica trabajos con nosotros
         </p>
       </div>
@@ -29,7 +31,7 @@
           target="_blank"
         >
           <img
-            class="h-10 lg:h-14"
+            class="h-10 lg:h-12"
             src="googleplay.svg"
             alt="Google Play Store Link"
           />
@@ -43,5 +45,5 @@
         alt="Work Today App Screenshot"
       />
     </div>
-  </div>
+  </Container>
 </div>
