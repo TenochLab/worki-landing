@@ -4,6 +4,6 @@ const props = Astro.props;
 const className = props.className || "";
 ---
 
-<div class={`container mx-auto px-4 xl:px-6 max-w-screen-xl ${className}`}>
+<div class={`${className} container mx-auto px-4 xl:px-6 max-w-screen-xl`}>
   <slot />
 </div>

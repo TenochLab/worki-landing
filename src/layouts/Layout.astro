@@ -1,6 +1,7 @@
 ---
 import Head from "../components/shared/BaseHead.astro";
 import Footer from "../components/shared/Footer.astro";
+import Container from "../components/utils/Container.astro";
 ---
 
 <!doctype html>
@@ -9,6 +10,9 @@ import Footer from "../components/shared/Footer.astro";
     <Head title="Work Today App" description="Work Today App" />
   </head>
   <body class="bg-primary dark:bg-primary-700">
+    <Container className="py-10 lg:py-15 ">
+      <img src="/logo.svg" alt="Work Today Logo" class="h-10 lg:h-15" />
+    </Container>
     <slot />
     <Footer />
   </body>
