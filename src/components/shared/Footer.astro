@@ -2,6 +2,8 @@
 import Container from "../utils/Container.astro";
 import Social from "../utils/Social.astro";
 
+import { APP_NAME, EMAIL } from "../../consts";
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -11,7 +13,7 @@ const currentYear = new Date().getFullYear();
   >
     <div class="flex-1">
       <a href="/" class="mb-6 block">
-        <img src="/logo.svg" alt="Work Today Logo" class="h-17" />
+        <img src="/logo.svg" alt="Work Today Logo" class="w-30" />
       </a>
       <div class="text-sm text-primary-100">
         <a href="/privacy" class="hover:underline block mb-3"
@@ -22,9 +24,9 @@ const currentYear = new Date().getFullYear();
     </div>
     <div class="flex-1 text-right text-primary-100 text-sm">
       <p class="text-white mb-6">
-        worktoday @ {currentYear}
+        {APP_NAME} @ {currentYear}
       </p>
-      <a href="mailto:contacto@worktoday.io" class="hover:underline block mb-3"
+      <a href={`mailto:${EMAIL}`} class="hover:underline block mb-3"
         >Contáctanos</a
       >
       <Social />
