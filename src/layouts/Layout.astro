@@ -2,12 +2,14 @@
 import Head from "../components/shared/BaseHead.astro";
 import Footer from "../components/shared/Footer.astro";
 import Container from "../components/utils/Container.astro";
+
+import { APP_NAME } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title="Work Today App" description="Work Today App" />
+    <Head title={`${APP_NAME} App`} description={`${APP_NAME} App`} />
   </head>
   <body class="bg-primary dark:bg-primary-700">
     <Container className="py-10 lg:py-15 ">
