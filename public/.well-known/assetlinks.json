@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.worktoday",
+      "sha256_cert_fingerprints": [
+        "3C:43:D2:4C:85:B7:71:4A:C7:78:F5:10:A3:CC:7D:DD:55:54:A3:99:C9:10:04:44:ED:74:02:24:F3:44:97:86"
+      ]
+    }
+  }
+]
