@@ -7,15 +7,110 @@ import { EMAIL, APP_NAME } from "../../consts";
 
 <Layout>
   <Container className="text-white dark:text-primary-100 px-0">
-    <h1 class="text-3xl font-bold mb-4">Eliminar Cuenta</h1>
-    <p class="mb-4 text-xl">
-      Si deseas eliminar tu cuenta de {APP_NAME}, por favor envíanos un correo a
-      <a
-        class="text-primary-50 hover:text-primary-100 hover:underline"
-        href={`mailto:${EMAIL}`}
+    <h1 class="text-3xl font-bold mb-6">Eliminar Cuenta</h1>
+
+    <div class="max-w-2xl">
+      <p class="mb-6 text-lg">
+        Si deseas eliminar tu cuenta de {APP_NAME}, por favor completa el
+        siguiente formulario. Tu solicitud será procesada y se te contactará por
+        correo electrónico.
+      </p>
+
+      <form class="space-y-6 mb-8">
+        <div>
+          <label for="email" class="block text-sm font-medium mb-2">
+            Correo electrónico asociado a tu cuenta *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 bg-primary-700 border border-primary-800 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none"
+            placeholder="tu-email@ejemplo.com"
+          />
+        </div>
+
+        <div>
+          <label for="reason" class="block text-sm font-medium mb-2">
+            Motivo de la solicitud *
+          </label>
+          <textarea
+            id="reason"
+            name="reason"
+            required
+            rows="4"
+            class="w-full px-4 py-3 bg-primary-700 border border-primary-800 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none resize-vertical"
+            placeholder="Por favor, indica el motivo por el cual deseas eliminar tu cuenta..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+        >
+          Enviar Solicitud de Eliminación
+        </button>
+      </form>
+
+      <!-- Disclaimer -->
+      <div
+        class="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-4 mb-6"
       >
-        {EMAIL}
-      </a>
-    </p>
-  </Container></Layout
->
+        <div class="flex items-start">
+          <svg
+            class="w-5 h-5 text-yellow-500 mt-0.5 mr-3 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <div>
+            <h3 class="text-sm font-medium text-yellow-500 mb-1">
+              Información importante
+            </h3>
+            <p class="text-sm text-yellow-200">
+              Tu solicitud de eliminación de cuenta será procesada en un plazo
+              no mayor a 7 días hábiles. Recibirás una confirmación por correo
+              electrónico una vez que se haya completado el proceso.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-primary-100">
+        Si tienes alguna pregunta sobre este proceso, puedes contactarnos en
+        <a
+          class="text-primary-50 hover:text-primary-5 0 hover:underline"
+          href={`mailto:${EMAIL}`}
+        >
+          {EMAIL}
+        </a>
+      </p>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+  document.querySelector("form")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this as HTMLFormElement);
+    const email = formData.get("email") as string;
+    const reason = formData.get("reason") as string;
+
+    // Crear el cuerpo del correo
+    const subject = encodeURIComponent(
+      "Solicitud de eliminación de cuenta - Worki"
+    );
+    const body = encodeURIComponent(
+      `Correo electrónico: ${email}\n\nMotivo de la solicitud:\n${reason}`
+    );
+
+    // Abrir cliente de correo
+    window.location.href = `mailto:worki@somosworki.com?subject=${subject}&body=${body}`;
+  });
+</script>
